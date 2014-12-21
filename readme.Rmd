@@ -1,0 +1,27 @@
+---
+title: "Readme"
+output: html_document
+---
+
+The app provides a demonstration of how the shape of the probability density function (pdf) for the Weibull distribution depends on its parameters.
+
+The probability density function of a Weibull random variable is:
+
+$$ f(x;\lambda,k) =
+\begin{cases}
+\frac{k}{\lambda}\left(\frac{x}{\lambda}\right)^{k-1}e^{-(x/\lambda)^{k}} & x\geq0 ,\\
+0 & x<0,
+\end{cases} $$
+
+* $k$ is the shape parameter
+* $\lambda$ is the scale parameter
+
+
+Parameters $\lambda$ and $k$ can be changed with sliders on the side panel; the probability density function is recalculated and the plot is reactively changed corresponding to the new values.
+
+The following plot shows the Weibull probability distribution function for $\lambda = 1$ and $k = 2$
+```{r}
+x <- seq(0,5,0.02)
+plot(x,dweibull(x,2,1),col="red",type = "l",xlab = "x",ylab = "f(x)",main="Weilbull PDF")
+```
+
